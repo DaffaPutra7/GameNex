@@ -3,18 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    public GameObject gameOverPanel;
-    public GameObject winPanel; 
+    public GameObject gameOverText;
+    public GameObject winnerText; 
 
     public void TriggerGameOver()
     {
-        gameOverPanel.SetActive(true);
+        gameOverText.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void TriggerWin()
     {
-        winPanel.SetActive(true);
+        winnerText.SetActive(true);
 
         Time.timeScale = 0f;
     }
