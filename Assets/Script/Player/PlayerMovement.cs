@@ -6,8 +6,12 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
 
     [Header("Pengaturan Menembak")]
-    public GameObject bulletPrefab; 
-    public Transform firePoint;    
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+    [Header("Pengaturan Audio")]
+    public AudioClip shootSound; 
+    private AudioSource audioSource;
 
     [Header("Komponen")]
     public Rigidbody2D rb;
@@ -20,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
+
+        audioSource = GetComponent<AudioSource>();
 
         Camera mainCamera = Camera.main;
         float distanceToCamera = Mathf.Abs(mainCamera.transform.position.z);
@@ -42,7 +48,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
+        // Instantiate Peluru
         Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
+
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
     }
 
     void FixedUpdate()
