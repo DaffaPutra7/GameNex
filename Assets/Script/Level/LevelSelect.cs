@@ -5,17 +5,18 @@ public class LevelSelect : MonoBehaviour
 {
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("MainGame");
+        Debug.Log("Tombol Level 1 Ditekan! Mencoba masuk MainGames...");
+        SceneManager.LoadScene("MainGames");
     }
 
     public void LoadLevel2()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("MainGames");
     }
 
     public void LoadLevel3()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("MainGames [ Level 2 ]");
     }
 
     public void BackToMenu()

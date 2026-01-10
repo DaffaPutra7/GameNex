@@ -3,13 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PindahScene : MonoBehaviour
 {
-    // PANEL ABOUT (drag dari Inspector)
     public GameObject aboutPanel;
 
     // === BUTTON START ===
     public void StartGame()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("HalamanLevel");
     }
 
     // === BUTTON ABOUT ===
@@ -29,6 +28,6 @@ public class PindahScene : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-        Debug.Log("Game Keluar"); // cuma kelihatan di Editor
+        Debug.Log("Game Keluar");
     }
 }

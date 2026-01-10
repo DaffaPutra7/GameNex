@@ -867,6 +867,7 @@ MonoBehaviour:
   moveSpeed: 5
   bulletPrefab: {fileID: 6381140068236941206, guid: 03e4e7295b5609c44b8c5265884e943d, type: 3}
   firePoint: {fileID: 0}
+  fireRate: 0.5
   shootSound: {fileID: 8300000, guid: ce59a06456184834d9bae190cf0e56b0, type: 3}
   rb: {fileID: 1186798910}
 --- !u!61 &1186798909
@@ -1399,7 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0862fedb36c163f40a558532ee9936e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefab: {fileID: 8616322573740497375, guid: 85e650d06a8bd4146b855fbc5167409d, type: 3}
+  enemyPrefab: {fileID: 7445033826140291233, guid: 99eca39b6e8555445aa0c222d3810204, type: 3}
   spawnInterval: 2
   xLimit: 2.5
 --- !u!114 &1729821919
