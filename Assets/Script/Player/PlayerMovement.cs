@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    public float fireRate = 0.5f; 
+    private float nextFire = 0f;
+
     [Header("Pengaturan Audio")]
     public AudioClip shootSound; 
     private AudioSource audioSource;
@@ -40,8 +43,9 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
         {
+            nextFire = Time.time + fireRate; 
             Shoot();
         }
     }
