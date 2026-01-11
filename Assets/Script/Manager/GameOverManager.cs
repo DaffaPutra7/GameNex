@@ -48,9 +48,24 @@ public class GameOverManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
 
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextLevelToUnlock = 1;
+
+        if (currentSceneIndex == 2) nextLevelToUnlock = 2;
+        if (currentSceneIndex == 3) nextLevelToUnlock = 3;
+
+        int currentLevelReached = PlayerPrefs.GetInt("levelReached", 1);
+
+        if (nextLevelToUnlock > currentLevelReached)
+        {
+            PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+            PlayerPrefs.Save(); 
+        }
+
+        int nextSceneIndex = currentSceneIndex + 1;
 
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
